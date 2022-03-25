@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise-封装</title>
+    <script src="./promise.js"></script>
+</head>
+<body>
+    <script>
+        let p = new Promise((resolve,reject)=>{
+            // ** 同步调用 ** 很重要
+            console.log(1)
+             resolve('ok')
+            // reject('error')
+        })
+        
+        p.then(reason=>{
+            // 其中代码异步执行
+            console.log(2)
+            console.log(reason)
+        })
+        console.log(3)
+    </script>
+</body>
+
+</html>
